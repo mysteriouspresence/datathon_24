@@ -1,8 +1,7 @@
-import Link from "next/link";
-import { api } from "~/trpc/server";
+import { LampContainer, LampDemo } from "./_components/Lamp";
 
 export default async function Home() {
   // Load file from public
 
-  return <></>;
+  return <><LampDemo /></>;
 }
