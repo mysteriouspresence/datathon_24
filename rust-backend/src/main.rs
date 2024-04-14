@@ -1,9 +1,12 @@
 use calamine::*;
 use std::collections::HashMap;
+use std::fs::File;
+use std::io::Write;
 
 #[derive(Debug, Clone)]
 struct Node {
     part: String,
+    parent: String,
     variant: String,
     is_error: bool,
     is_affected: bool,
@@ -36,7 +39,7 @@ fn main() -> Result<(), Error> {
     let results: HashMap<String, (u8,Node)> = RangeDeserializerBuilder::new()
         .from_range(&range)?
         .map(|row| {
-            let (level, path, _, _, part, _, _, _, _, _, variant, is_error): (
+            let (level, path, _, _, part, _, parent, _, _, _, variant, is_error): (
                 u8,
                 String,
                 String,
@@ -55,6 +58,7 @@ fn main() -> Result<(), Error> {
                 (level,
                 Node {
                     part,
+                    parent,
                     variant,
                     is_error,
                     is_affected: false,
@@ -77,6 +81,12 @@ fn main() -> Result<(), Error> {
         count = count + 1;
     }
     println!("{:?}", results.parts);
-    //results.parts.iter().
+
+    let clean: Vec<(u8, String, String, String, bool, bool)> = results.parts.into_iter().map(|(_, (level, node))| (level, node.variant, node.part, node.parent, node.is_error,node.is_affected)).collect();
+    let text = clean.iter().map(|c| format!("{}, {}, {}, {}, {}. {}\n", c.0, c.1, c.2, c.3, c.4, c.5)).collect::<String>();
+    let mut output = File::create("values.csv")?;
+    write!(output, "{}", text).expect("file dne");
+
+    
     Ok(())
 }
