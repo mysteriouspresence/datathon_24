@@ -29,3 +29,4 @@ export const posts = createTable("data", {
   sub_component_code: varchar("Sub Component Code", { length: 11 }),
   variant: varchar("Variant", { length: 170 }),
 });
+
