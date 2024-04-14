@@ -41,10 +41,10 @@ export function LampDemo() {
       >
         {asq_query.isLoading ? "Loading..." : "Search"}
       </button>
-      <div className="mt-5">
+      <div className="mt-5 overflow-scroll h-[200px]">
         {asq_query.data?.map((post) => (
-          <div key={post.id} className="text-white">
-            {post.variant}
+          <div key={post.id} className="text-white ">
+            {post.variant}, {post.responsible_engineer}, {post.part_number}
           </div>
         ))}
       </div>
