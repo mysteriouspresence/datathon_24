@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "~/utils/cn";
-
+//hi
 const transition = {
   type: "spring",
   mass: 0.5,
