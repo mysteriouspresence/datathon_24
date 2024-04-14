@@ -70,12 +70,12 @@ export const Menu = ({
 }) => {
   return (
     <div className="relative h-10 rounded-full px-[10px] ">
-        <div className="overflow-hidden sticky rounded-full h-[80px] mb-[-75px]">
-      <span className="absolute overflow-hidden inset-[-100%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+      <div className="sticky mb-[-75px] h-[80px] overflow-hidden rounded-full">
+        <span className="absolute inset-[-100%] animate-[spin_2s_linear_infinite] overflow-hidden bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
       </div>
       <nav
         onMouseLeave={() => setActive(null)} // resets the state
-        className="boder shadow-input relative flex justify-around space-x-3 rounded-full border-transparent bg-white px-5 py-6 dark:border-white/[0.2] dark:bg-black "
+        className="boder relative flex justify-around space-x-3 rounded-full border-transparent bg-white px-5 py-6 shadow-input dark:border-white/[0.2] dark:bg-black "
       >
         {children}
       </nav>
@@ -94,17 +94,19 @@ export function Navbar({ className }: { className?: string }) {
     >
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Query">
-          <div className="flex flex-col text-white space-y-4 text-sm">
+          <div className="flex flex-col space-y-4 text-sm text-white">
             <div>Query easily with our search tool</div>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Visualizations">
-          <div className="flex flex-col text-white space-y-4 text-sm">
-            <div>Cool data visualizations</div>
-          </div>
-        </MenuItem>
+        <Link href="/Visualization">
+          <MenuItem setActive={setActive} active={active} item="Visualizations">
+            <div className="flex flex-col space-y-4 text-sm text-white">
+              <div>Cool data visualizations</div>
+            </div>
+          </MenuItem>
+        </Link>
         <MenuItem setActive={setActive} active={active} item="About us">
-          <div className="flex flex-col text-white space-y-4 text-sm">
+          <div className="flex flex-col space-y-4 text-sm text-white">
             <div>Hello ther! :D</div>
           </div>
         </MenuItem>
