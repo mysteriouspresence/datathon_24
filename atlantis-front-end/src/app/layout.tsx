@@ -3,7 +3,8 @@ import "~/styles/globals.css";
 import { Inter } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
-import { Navbar } from "./_components/Navbar";
+import { NextUIProvider, Spinner } from "@nextui-org/react";
+import { Suspense } from "react";
 ("./_components/Navbar");
 
 const inter = Inter({

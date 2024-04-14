@@ -30,3 +30,16 @@ export const posts = createTable("data", {
   variant: varchar("Variant", { length: 170 }),
 });
 
+export const graph = createTable("graph", {
+  // level, variant, part, parent, name, system, subsystem, error, affected
+  id: serial('id').primaryKey(),
+  level: integer("level").notNull(),
+  variant: varchar("variant", { length: 170 }),
+  part: varchar("part", { length: 132 }).notNull(),
+  parent: varchar("parent", { length: 132 }),
+  name: varchar("name", { length: 88 }).notNull(),
+  system: varchar("system", { length: 131 }).notNull(),
+  subsystem: varchar("subsystem", { length: 131 }).notNull(),
+  error: varchar("error", { length: 88 }).notNull(),
+  affected: varchar("affected", { length: 88 }).notNull(),
+});

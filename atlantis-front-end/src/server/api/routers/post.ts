@@ -15,3 +15,11 @@ export const postRouter = createTRPCRouter({
     }
   ),
 });
+
+export const nodeRouter = createTRPCRouter({
+  graphFull: publicProcedure
+    .query(async () => {
+      return db.query.graph
+    }
+  ),
+});

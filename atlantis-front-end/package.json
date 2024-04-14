@@ -12,6 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.2.10",
     "@radix-ui/react-label": "^2.0.2",
     "@t3-oss/env-nextjs": "^0.9.2",
     "@tabler/icons-react": "^3.2.0",

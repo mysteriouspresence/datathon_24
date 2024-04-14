@@ -1,3 +1,4 @@
+level,variant,part,parent,name,system,subsystem,error,affected
 7, Venti/, PT00097673, PT00023315, Rico Suave, ELECTRIC, POWER DISTRIBUTION SUBSYSTEM, false, false
 4, Grande, GP00009219, SB00008867, Rachel Green, AUTOPILOT, SENSORS, false, true
 7, Grande, PT00175991, PT00094368, Tom Haverford, BODY, STRUCTURE, true, false
