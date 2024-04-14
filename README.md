@@ -3,7 +3,7 @@
 This is our attempt for the UCI Datathon!
 We attempted doing the QuickRelease Challenge using Rust and Excel especially.
 
-The front end was an attempt to make an interactive visualization of how the errors had propogated and we made a querying model using NextJs, TRPC, PostgreSQL and shadcn-ui!
+The front end was an attempt to make an interactive visualization of how the errors had propogated and we made a querying model using NextJs, TRPC, PostgreSQL, and Supabase and shadcn-ui!
 
 ## Visualizations
 
@@ -13,8 +13,13 @@ The front end was an attempt to make an interactive visualization of how the err
 
 <img src="./atlantis-front-end/public/System Impacts.png" />
 
-<iframe src="./QRV Bill of Materials.xlsx" />
+#Excel sheet for data visualization and analysis
 
+https://docs.google.com/spreadsheets/d/1bTjfpigcLDQtB0TDn1nJgK_AzWb7hJoqUxkfaUUJuvg/edit#gid=0
+
+# Slides
+
+https://docs.google.com/presentation/d/1h_SaulWt3OzJT3LTxlFuCy_d6emMhXEbO9ZEtF1cuqI/edit?usp=sharing
 We have identified the unique relation amongst the procurement and how the error in one system propogated and how that would be super bad for teh stakes of the company.
 
 ## Inspiration
