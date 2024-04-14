@@ -7386,3 +7386,4 @@ const data: Node[] = [{id: "1", style: {'background': 'red'} ,data: {variant: "V
 {id: "7394", data: {variant: "Tall/", part: "SC00011469", parent: "CAY00006034",   label: "Lisa Simpson INTERIOR TRIM SC00011469", system: "INTERIOR", subsystem: "TRIM", error: "false", affected: "false",  type: ""},  type: "", position: {x: 244700, y: 600}, },
 {id: "7395", data: {variant: "Grande", part: "PT00098131", parent: "PT00076683",   label: "Korg CHASSIS SUSPENSION PT00098131", system: "CHASSIS", subsystem: "SUSPENSION", error: "true", affected: "false",  type: ""},  type: "", position: {x: 241900, y: 700}, },
 ]
+export {data};

@@ -5,7 +5,7 @@ import ReactFlow, {
   BackgroundVariant,
 } from "reactflow";
 import "reactflow/dist/style.css";
-import data from "./_components/Nodehandling";
+import { data } from "./_components/Nodehandling";
 import { TRPCReactProvider } from "~/trpc/react";
 import { NextUIProvider, Spinner } from "@nextui-org/react";
 import { Suspense } from "react";
