@@ -103,11 +103,13 @@ export function Navbar({ className }: { className?: string }) {
             <div>Cool data visualizations</div>
           </div>
         </MenuItem>
+        <Link href='/AboutUs'>
         <MenuItem setActive={setActive} active={active} item="About us">
           <div className="flex flex-col text-white space-y-4 text-sm">
             <div>Hello ther! :D</div>
           </div>
         </MenuItem>
+        </Link>
       </Menu>
     </div>
   );
