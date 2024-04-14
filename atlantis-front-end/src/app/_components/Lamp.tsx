@@ -1,10 +1,16 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "~/utils/cn";
-import { Input } from "@/components/ui/input";
+import { api } from "~/trpc/react";
 
 export function LampDemo() {
+  const [name, setName] = useState("");
+
+  const asq_query = api.post.queeryParts.useQuery({
+    text: name,
+  });
+  console.log(asq_query);
   return (
     <LampContainer>
       <motion.h1
@@ -21,9 +27,27 @@ export function LampDemo() {
       </motion.h1>
       <input
         className={cn(
-          "mt-10 border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-15 w-full rounded-md border bg-black px-5 py-3 text-sm text-white file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          "border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring h-15 mt-10 flex w-full rounded-md border bg-black px-5 py-3 text-sm text-white file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
         )}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
+      <button
+        onClick={() => asq_query.refetch()}
+        disabled={asq_query.isLoading}
+        className={cn(
+          "mt-5 rounded-md bg-cyan-500 px-5 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-50",
+        )}
+      >
+        {asq_query.isLoading ? "Loading..." : "Search"}
+      </button>
+      <div className="mt-5">
+        {asq_query.data?.map((post) => (
+          <div key={post.id} className="text-white">
+            {post.variant}
+          </div>
+        ))}
+      </div>
     </LampContainer>
   );
 }
