@@ -98,11 +98,13 @@ export function Navbar({ className }: { className?: string }) {
             <div>Query easily with our search tool</div>
           </div>
         </MenuItem>
+        <Link href="/Visualizations">
         <MenuItem setActive={setActive} active={active} item="Visualizations">
           <div className="flex flex-col text-white space-y-4 text-sm">
             <div>Cool data visualizations</div>
           </div>
         </MenuItem>
+        </Link>
         <Link href='/AboutUs'>
         <MenuItem setActive={setActive} active={active} item="About us">
           <div className="flex flex-col text-white space-y-4 text-sm">
