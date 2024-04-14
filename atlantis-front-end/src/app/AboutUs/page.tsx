@@ -70,7 +70,8 @@ const products = [
 function page() {
   return (
     <div className="h-100 mt-[200px] flex flex-col place-items-center space-y-4 overflow-y-auto">
-      <Card className="relative w-[320px] rounded border-2 p-1 opacity-80">
+      <div className="flex flex-row">
+      <Card className="relative mx-7 w-[320px] rounded border-2 p-1 opacity-80">
         <CardHeader>
           <CardTitle className="mx-auto text-white">Chelsea</CardTitle>
           <CardDescription className="mx-auto px-2 text-white">
@@ -101,7 +102,7 @@ function page() {
         </CardContent>
       </Card>
 
-      <Card className="relative w-[320px] rounded border-2 p-1 opacity-80">
+      <Card className="relative mx-7 w-[320px] rounded border-2 p-1 opacity-80">
         <CardHeader>
           <CardTitle className="mx-auto text-white">Priyansh</CardTitle>
           <CardDescription className="m-auto p-1 text-white">
@@ -135,7 +136,7 @@ function page() {
         </CardContent>
       </Card>
 
-      <Card className="relative my-1 w-[320px] rounded border-2 p-1 opacity-80">
+      <Card className="relative mx-7 my-1 w-[320px] rounded border-2 p-1 opacity-80">
         <CardHeader>
           <CardTitle className="mx-auto text-white">Daniel</CardTitle>
           <CardDescription className="m-auto text-white">
@@ -164,7 +165,8 @@ function page() {
           </form>
         </CardContent>
       </Card>
-      <HeroParallax products={} />
+      </div>
+      <HeroParallax products={products} />
     </div>
   );
 }
