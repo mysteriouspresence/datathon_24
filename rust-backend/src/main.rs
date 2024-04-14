@@ -3,6 +3,7 @@ use std::{collections::HashMap, ops::Deref};
 
 #[derive(Debug, Clone)]
 struct Node {
+    level: u8,
     part: String,
     variant: String,
     is_error: bool,
@@ -36,8 +37,8 @@ fn main() -> Result<(), Error> {
     let results: HashMap<String, Node> = RangeDeserializerBuilder::new()
         .from_range(&range)?
         .map(|row| {
-            let (_, path, _, _, part, _, _, _, _, _, variant, is_error): (
-                String,
+            let (level, path, _, _, part, _, _, _, _, _, variant, is_error): (
+                u8,
                 String,
                 String,
                 String,
@@ -53,6 +54,7 @@ fn main() -> Result<(), Error> {
             (
                 part.clone(),
                 Node {
+                    level,
                     part,
                     variant,
                     is_error,
@@ -75,6 +77,7 @@ fn main() -> Result<(), Error> {
         }
         count = count + 1;
     }
-    println!("1{:?}", results.parts.get("EV00004608"));
+    println!("{:?}", results.parts);
+    results.parts.iter().
     Ok(())
 }
